@@ -5,8 +5,8 @@ import { ButtonFill } from '../../styles/styles';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/redux';
 import { toggleMenu } from '../../store/menu/menuSlice';
-// import { toggleCreateNoteModal } from '../../store/modal/modalSlice';
-// import getStandardName from '../../utils/getStandardName';
+import { toggleCreateNoteModal } from '../../store/modal/modalSlice';
+import getStandardName from '../../utils/getStandardName';
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -17,22 +17,21 @@ const Navbar = () => {
     return null;
   }
 
+  
   return (
     <StyledNav>
       <div className='nav__menu'>
         <FiMenu onClick={() => dispatch(toggleMenu(true))} />
-        {/* <FiMenu /> */}
-
       </div>
 
+    
       <Container>
-        {/* <div className='nav__page-title'>{getStandardName(state)} </div> */}
-        <div className='nav__page-title'> </div>
+        <div className='nav__page-title'>{getStandardName(state)} </div>
 
 
         {state !== "Trash" && state !== "Archive" &&
           <ButtonFill
-            // onClick={() => dispatch(toggleCreateNoteModal(true))}
+            onClick={() => dispatch(toggleCreateNoteModal(true))}
             
             className="nav__btn"
           >

@@ -87,16 +87,16 @@ const notesListSlice = createSlice({
         //     }
 
         // },
-        // removeTags: (state, { payload }) => {
-        //     state.mainNotes = state.mainNotes.map((note) => ({
-        //         ...note,
-        //         tags: note.tags.filter(({ tag }) => tag !== payload.tag)
-        //     }))
-        // }
+        removeTags: (state, { payload }) => {
+            state.mainNotes = state.mainNotes.map((note) => ({
+                ...note,
+                tags: note.tags.filter(({ tag }) => tag !== payload.tag)
+            }))
+        }
     }
 })
 
-// export const {
+export const {
 //     setMainNotes,
 //     setTrashNotes,
 //     setArchiveNotes,
@@ -106,7 +106,7 @@ const notesListSlice = createSlice({
 //     setPinnedNotes,
 //     setEditNote,
 //     readNote,
-//     removeTags
-// } = notesListSlice.actions;
+    removeTags
+} = notesListSlice.actions;
 
 export default notesListSlice.reducer;

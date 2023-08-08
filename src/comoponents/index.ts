@@ -4,6 +4,4 @@ export {default as FiltersModal} from './Modal/FiltersModal/FiltersModal'
 export {default as ReadNoteModal} from './Modal/ReadNoteModal/ReadNoteModal'
 export {default as NoteCard} from './NoteCard/NoteCard'
 export {default as TextEditor} from './TextEditor/TextEditor'
-export {default as allNotes} from './Modal/allNotes/allNotes'
-
 
