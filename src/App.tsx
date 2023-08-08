@@ -1,9 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import {  Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
 
-import './App.css'
+import {  Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
+// import './App.css'
 import { Navbar, Sidebar } from './layout'
 import { AllNotes, ArchiveNotes, ErrorPage, TagNotes, TrashNotes } from './pages'
 
