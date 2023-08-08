@@ -8,7 +8,7 @@ import { addTags, deleteTags } from '../../../store/tags/tagsSlice';
 import { Tag } from '../../../types/tag';
 import getStandardName from '../../../utils/getStandardName';
 import { DeleteBox, FixedContainer } from '../Modal.styles';
-import { Box, StyledInput, TagsBox } from './TagModal.styles';
+import { Box, StyledInput, TagsBox } from './TagsModal.styles';
 
 interface TagsModalProps {
   type: string;

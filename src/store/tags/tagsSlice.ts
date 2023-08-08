@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { v4 } from 'uuid';
 
 const initialState = {
@@ -29,6 +29,6 @@ const tagsSlice = createSlice({
     }
 })
 
-// export const { addTags, deleteTags } = tagsSlice.actions;
+export const { addTags, deleteTags } = tagsSlice.actions;
 
 export default tagsSlice.reducer;
