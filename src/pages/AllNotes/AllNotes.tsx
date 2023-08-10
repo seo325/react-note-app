@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-// import { FiltersModal } from '../../components';
 import { useAppDispatch, useAppSeletor,  } from '../../hooks/redux'
 import { toggleFiltersModal } from '../../store/modal/modalSlice';
 import { ButtonOutline, Container, EmptyMsgBox } from '../../styles/styles';
 import getAllNotes from '../../utils/getAllNotes';
 import { Box, InputBox, TopBox } from './AllNotes.styles';
+import { FiltersModal } from '../../comoponents';
 
 const AllNotes = () => {
   const dispatch = useAppDispatch();
@@ -23,13 +23,13 @@ const AllNotes = () => {
 
   return (
     <Container>
-      {/* {viewFiltersModal && (
+      {viewFiltersModal && (
         <FiltersModal
           handleFilter={filterHandler}
           handleClear={clearHandler}
           filter={filter}
         />
-      )} */}
+      )}
 
       {mainNotes.length === 0 ? (
         <EmptyMsgBox>
