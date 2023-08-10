@@ -5,7 +5,7 @@ import { BsFillPinFill } from 'react-icons/bs';
 import { Note } from '../../types/note';
 import { useAppDispatch } from '../../hooks/redux';
 import getRelevantBtns from '../../utils/getRelevantBtns';
-// import { readNote, setPinnedNotes } from '../../store/notesList/notesListSlice';
+import { readNote, setPinnedNotes } from '../../store/notesList/notesListSlice';
 import parse from 'html-react-parser';
 import ReadNoteModal from '../Modal/ReadNoteModal/ReadNoteModal';
 
@@ -51,7 +51,7 @@ const NoteCard = ({ note, type }: NoteCardProps) => {
             {type !== "archive" && type !== "trash" && (
               <NotesIconBox
                 className='noteCard__pin'
-                // onClick={() => dispatch(setPinnedNotes({ id }))}
+                onClick={() => dispatch(setPinnedNotes({ id }))}
               >
                 <BsFillPinFill
                   style={{ color: isPinned ? "red" : "" }}
@@ -60,10 +60,9 @@ const NoteCard = ({ note, type }: NoteCardProps) => {
             )}
           </div>
         </TopBox>
-        {/* <ContentBox onClick={() => dispatch(readNote({ type, id }))}>
+        <ContentBox onClick={() => dispatch(readNote({ type, id }))}>
           {parse(func())}
-        </ContentBox> */}
-        <ContentBox> {content}</ContentBox>
+        </ContentBox>
         <TagsBox>
           {tags.map(({ tag, id }) => (
             <span key={id}>{tag}</span>
