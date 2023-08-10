@@ -1,8 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ReactQuill from 'react-quill'
+import { Container } from './TextEditor.styles'
+import 'react-quill/dist/quill.snow.css';
+interface TextEditorProps {
+  value: string,
+  setValue: React.Dispatch<React.SetStateAction<string>>,
+  color: string
+}
 
-const TextEditor = () => {
+
+const formats = [
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "list",
+
+  "color",
+  "background",
+
+  "image",
+  "blockquote",
+  "code-block",
+];
+
+const modules = {
+  toolbar: [
+    [{ list: "ordered" }, { list: "bullet" }],
+    [],
+    ["italic", "underline", "strike"],
+    [],
+    [{ color: [] }, { background: [] }],
+    [],
+    ["image", "blockquote", "code-block"],
+  ],
+};
+
+const TextEditor = ({ color, value, setValue }: TextEditorProps) => {
+
+  console.log(value);
+
   return (
-    <div>TextEditor</div>
+    <Container notecolor={color}>
+      <ReactQuill
+        formats={formats}
+        modules={modules}
+        theme="snow"
+        value={value}
+        onChange={setValue} />
+    </Container>
   )
 }
 

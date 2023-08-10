@@ -22,7 +22,7 @@ const CreateNoteModal = () => {
   const [noteTitle, setNoteTitle] = useState(editNote?.title || "");
   const [value, setValue] = useState(editNote?.content || "");
   const [addedTags, setAddedTags] = useState(editNote?.tags || []);
-  const [noteColor, setNoteColor] = useState(editNote?.color || "");
+  const [notecolor, setNoteColor] = useState(editNote?.color || "");
   const [priority, setPriority] = useState(editNote?.priority || "low");
 
   const closeCreateNoteModal = () => {
@@ -55,7 +55,7 @@ const CreateNoteModal = () => {
       title: noteTitle,
       content: value,
       tags: addedTags,
-      color: noteColor,
+      color: notecolor,
       priority,
       editedTime: new Date().getTime(),
     }
@@ -106,7 +106,7 @@ const CreateNoteModal = () => {
         />
 
         <div>
-          <TextEditor color={noteColor} value={value} setValue={setValue} />
+          <TextEditor color={notecolor} value={value} setValue={setValue} />
         </div>
 
 
@@ -133,7 +133,7 @@ const CreateNoteModal = () => {
           <div>
             <label htmlFor='color'>배경색 : </label>
             <select
-              value={noteColor}
+              value={notecolor}
               id="color"
               onChange={(e) => setNoteColor(e.target.value)}
             >
